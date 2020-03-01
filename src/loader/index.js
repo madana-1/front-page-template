@@ -7,6 +7,14 @@ import switcherLoader from './switcherLoader'
 import systemLoader from './systemLoader'
 import weatherLoader from './weatherLoader'
 
+window.FPI = {}
+window.setFPIInfo = (info, label, parse) => {
+  if (parse) {
+    window.FPI[label] = JSON.parse(info)
+  } else {
+    window.FPI[label] = info
+  }
+}
 window.FPIloaded = () => {
 }
 
