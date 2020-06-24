@@ -1,4 +1,4 @@
-import '@/common/ext'
+import '@/ext'
 
 import Vue from 'vue'
 import App from './App.vue'
