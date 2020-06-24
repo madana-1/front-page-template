@@ -1,0 +1,18 @@
+#!/bin/bash -eu
+
+NAME=$1
+
+cd $(dirname $0)
+cd ../
+
+/bin/rm -rf dist
+/bin/rm -rf node_modules
+
+cd ../
+
+cp -R template $NAME
+cd $NAME
+
+sed -i -e "s/package-name/$NAME/" package.json
+
+npm i

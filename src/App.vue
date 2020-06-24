@@ -1,5 +1,5 @@
 <template>
-  <div>aaa</div>
+  <div id="app"></div>
 </template>
 
 <script>
@@ -18,5 +18,14 @@ body {
   -webkit-user-select: none;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
 }
 </style>
