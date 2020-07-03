@@ -7,13 +7,17 @@ const {
 
 // Music
 const {
-  mapGetters: mapMusicGetters,
-  mapActions: mapMusicActions
+  mapGetters: mapMusicGetters
 } = createNamespacedHelpers('Music')
+
+// System
+const {
+  mapGetters: mapSystemGetters
+} = createNamespacedHelpers('System')
 
 export {
   mapAppGetters,
   mapAppActions,
   mapMusicGetters,
-  mapMusicActions
+  mapSystemGetters
 }

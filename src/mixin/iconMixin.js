@@ -14,7 +14,7 @@ export default {
     onTouchStart (e) {
       this.startDimension = getTouchDimension(e)
       this.timeoutId = setTimeout(() => {
-        this.$emit('hold')
+        this.onHold()
         this.timeoutId = null
       }, 1000)
     },

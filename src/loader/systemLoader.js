@@ -6,9 +6,14 @@ export default store => {
   }
 
   window.loadStatusBar = () => {
+    const { wifiBars, wifiName, signalBars, bluetoothEnabled } = FPI.statusbar
+    store.dispatch('System/setWiFiInfos', { wifiBars, wifiName })
+    store.dispatch('System/setSignalInfos', { signalBars })
+    store.dispatch('System/setBluetoothInfos', { bluetoothEnabled })
   }
 
   window.loadBattery = () => {
+    store.dispatch('System/setBatteryInfos', FPI.battery)
   }
 
   window.loadMemory = () => {

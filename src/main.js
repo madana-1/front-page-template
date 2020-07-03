@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 import loader from './loader'
+import './plugin/FPI'
 
 loader(store)
 
