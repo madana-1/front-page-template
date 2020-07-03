@@ -13,6 +13,8 @@ cd ../
 cp -R template $NAME
 cd $NAME
 
-sed -i -e "s/package-name/$NAME/" package.json
-
+sed -i '' -e "s/package-name/$NAME/" package.json
+/bin/rm -rf bin
 npm i
+
+code .

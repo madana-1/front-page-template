@@ -1,8 +1,15 @@
 <template>
-  <div id="app"></div>
+  <root />
 </template>
 
 <script>
+import Root from './render/Root'
+
+export default {
+  components: {
+    Root
+  }
+}
 </script>
 
 <style>
@@ -17,15 +24,9 @@ body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-overflow-scrolling: touch;
-  overflow: hidden;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
-}
-
-#app {
-  width: 100vw;
-  height: 100vh;
 }
 </style>
