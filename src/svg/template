@@ -1,0 +1,52 @@
+<template>
+  <svg
+    :width="size"
+    :height="size"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <template v-if="isGradient">
+      <defs>
+        <linearGradient id="gradient">
+          <stop offset="0" :stop-color="color[0]" />
+          <stop offset="1" :stop-color="color[1]" />
+        </linearGradient>
+      </defs>
+    </template>
+    <rect
+      width="24"
+      height="24"
+      fill="none"
+      rx="0"
+      ry="0"
+    ></rect>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="{{d}}"
+      :style="{ fill: isGradient ? 'url(#gradient)' : color }"
+    ></path>
+  </svg>
+</template>
+
+<script>
+export default {
+  props: {
+    size: {
+      type: Number,
+      required: true
+    },
+    color: {
+      type: [ String, Array ],
+      required: true
+    }
+  },
+
+  computed: {
+    isGradient () {
+      return Array.isArray(this.color)
+    }
+  }
+}
+</script>

@@ -1,0 +1,22 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)
+cd ..
+
+svgFiles=$(find ./svg -type f -name *.svg)
+dRegex='d="([^"]+)"'
+
+for svgFile in $svgFiles; do
+  svgFileContent=$(cat $svgFile)
+  if [[ $svgFileContent =~ $dRegex ]]; then
+    d=${BASH_REMATCH[1]}
+
+    svgFileName=$(basename $svgFile | cut -f 1 -d '.')
+    vueFileName="$(echo $svgFileName | perl -pe 's/(?:\b|-)(\p{Ll})/\u$1/g')Icon.vue"
+
+    cp ./src/svg/template ./src/svg/$vueFileName
+    sed -i '' -e "s/{{d}}/$d/" ./src/svg/$vueFileName
+
+    /bin/rm $svgFile
+  fi
+done
