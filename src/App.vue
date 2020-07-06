@@ -1,13 +1,13 @@
 <template>
-  <root />
+  <main />
 </template>
 
 <script>
-import Root from './render/Root'
+import Main from './render/Main'
 
 export default {
   components: {
-    Root
+    Main
   }
 }
 </script>
