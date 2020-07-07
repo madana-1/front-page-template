@@ -1,7 +1,7 @@
 import '@/ext'
 
 import Vue from 'vue'
-import App from './App.vue'
+import Render from './render'
 import store from './store'
 import loader from './loader'
 import './plugin/FPI'
@@ -12,5 +12,5 @@ Vue.config.productionTip = false
 
 new Vue({
   store,
-  render: h => h(App)
+  render: h => h(Render)
 }).$mount('#app')

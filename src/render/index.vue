@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="render">
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main {
+.root {
   position: relative;
   width: 100vw;
   height: 100vh;
